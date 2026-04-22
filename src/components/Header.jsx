@@ -7,37 +7,30 @@ import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 function Header() {
   return (
     <>
-      <div className="flex list-none fixed-top  bg-black text-white py-4  justify-between  w-full px-10">
-        <div>
-          <ul className="flex gap-10">
-            <li>
-              <img src={hero} width={50} alt="bado" />
-            </li>
-            <li>Home</li>
-            <li>Tv Shows</li>
-            <li>Movies</li>
-            <li>Latest</li>
-            <li>My List</li>
-            <li>Browse by Language</li>
-          </ul>
-        </div>
-        <div>
-          <ul className="flex  gap-5">
-            <li>
-              <SearchIcon />
-            </li>
-            <li>
-              <NotificationsActiveRoundedIcon />
-            </li>
-            <li>
-              <AccountBoxRoundedIcon />
-            </li>
-            <li>
-              <ArrowDropDownRoundedIcon />
-            </li>
-          </ul>
-        </div>
-      </div>
+      <div className="flex items-center justify-between bg-black text-white py-4 px-4 md:px-10 w-full fixed top-0">
+
+  {/* LEFT SIDE */}
+  <ul className="flex items-center gap-6 whitespace-nowrap">
+    <li>
+      <img src={hero} width={50} alt="logo" />
+    </li>
+    <li className="hidden md:block">Home</li>
+    <li className="hidden md:block">Tv Shows</li>
+    <li className="hidden md:block">Movies</li>
+    <li className="hidden lg:block">Latest</li>
+    <li className="hidden lg:block">My List</li>
+    <li className="hidden xl:block">Browse by Language</li>
+  </ul>
+
+  {/* RIGHT SIDE */}
+  <ul className="flex items-center gap-4">
+    <li><SearchIcon /></li>
+    <li className="hidden md:block"><NotificationsActiveRoundedIcon /></li>
+    <li><AccountBoxRoundedIcon /></li>
+    <li><ArrowDropDownRoundedIcon /></li>
+  </ul>
+
+</div>
     </>
   );
 }

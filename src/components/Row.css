@@ -1,0 +1,16 @@
+.row_posters {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+/* hide scrollbar for Chrome, Safari */
+.row_posters::-webkit-scrollbar {
+  display: none;
+}
+
+/* hide scrollbar for Firefox */
+.row_posters {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
