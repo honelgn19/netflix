@@ -1,37 +1,90 @@
-import React from "react";
-import hero from ".././assets/hero.png";
+import React, { useState } from "react";
+import hero from "../assets/hero.png";
+
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsActiveRoundedIcon from "@mui/icons-material/NotificationsActiveRounded";
 import AccountBoxRoundedIcon from "@mui/icons-material/AccountBoxRounded";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <>
-      <div className="flex items-center justify-between bg-black text-white py-4 px-4 md:px-10 w-full fixed top-0">
+    <div className="bg-black text-white w-full fixed top-0 z-50">
+      {/* Top Navbar */}
+      <div className="flex items-center justify-between px-4 md:px-10 py-4">
+        {/* LEFT SIDE */}
+        <div className="flex items-center gap-6">
+          {/* Hamburger Menu */}
+          <div
+            className="md:hidden cursor-pointer"
+            onClick={() => setMenuOpen(true)}
+          >
+            <MenuIcon />
+          </div>
 
-  {/* LEFT SIDE */}
-  <ul className="flex items-center gap-6 whitespace-nowrap">
-    <li>
-      <img src={hero} width={50} alt="logo" />
-    </li>
-    <li className="hidden md:block">Home</li>
-    <li className="hidden md:block">Tv Shows</li>
-    <li className="hidden md:block">Movies</li>
-    <li className="hidden lg:block">Latest</li>
-    <li className="hidden lg:block">My List</li>
-    <li className="hidden xl:block">Browse by Language</li>
-  </ul>
+          <img
+            src={hero}
+            alt="logo"
+            className="w-10 sm:w-12 md:w-14 lg:w-16 object-contain hover:opacity-80 transition"
+          />
 
-  {/* RIGHT SIDE */}
-  <ul className="flex items-center gap-4">
-    <li><SearchIcon /></li>
-    <li className="hidden md:block"><NotificationsActiveRoundedIcon /></li>
-    <li><AccountBoxRoundedIcon /></li>
-    <li><ArrowDropDownRoundedIcon /></li>
-  </ul>
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex gap-6">
+            <li className="cursor-pointer">Home</li>
+            <li className="cursor-pointer">TV Shows</li>
+            <li className="cursor-pointer">Movies</li>
+            <li className="cursor-pointer">Latest</li>
+            <li className="cursor-pointer">My List</li>
+            <li className="cursor-pointer md:hidden lg:block">
+              Browse by Language
+            </li>
+          </ul>
+        </div>
 
-</div>
-    </>
+        {/* RIGHT SIDE */}
+        <ul className="flex items-center gap-4">
+          <li className="cursor-pointer">
+            <SearchIcon />
+          </li>
+          <li className="hidden md:block cursor-pointer">
+            <NotificationsActiveRoundedIcon />
+          </li>
+          <li className="cursor-pointer">
+            <AccountBoxRoundedIcon />
+          </li>
+          <li className="cursor-pointer">
+            <ArrowDropDownRoundedIcon />
+          </li>
+        </ul>
+      </div>
+
+      {/* MOBILE MENU */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-black transform transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center p-4 border-b border-gray-700">
+          <span className="text-lg font-bold">Menu</span>
+          <CloseIcon
+            className="cursor-pointer"
+            onClick={() => setMenuOpen(false)}
+          />
+        </div>
+
+        <ul className="flex flex-col gap-6 p-6">
+          <li className="cursor-pointer">Home</li>
+          <li className="cursor-pointer">TV Shows</li>
+          <li className="cursor-pointer">Movies</li>
+          <li className="cursor-pointer">Latest</li>
+          <li className="cursor-pointer">My List</li>
+          <li className="cursor-pointer">Browse by Language</li>
+        </ul>
+      </div>
+    </div>
   );
 }
 

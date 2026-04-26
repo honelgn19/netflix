@@ -18,11 +18,13 @@
     "@tailwindcss/vite": "^4.2.2",
     "axios": "^1.15.2",
     "bootstrap": "^5.3.8",
+    "movie-trailer": "^3.2.2",
     "react": "^19.2.4",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.4",
     "react-router": "^7.14.1",
-    "react-router-dom": "^7.14.1"
+    "react-router-dom": "^7.14.1",
+    "react-youtube": "^10.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
