@@ -4,13 +4,13 @@
   padding: 20px;
 }
 
-/* hide scrollbar for Chrome, Safari */
-.row_posters::-webkit-scrollbar {
+/* Hide scrollbar (Chrome, Safari) */
+.scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
-/* hide scrollbar for Firefox */
-.row_posters {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Hide scrollbar (Firefox, IE) */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE */
+  scrollbar-width: none;     /* Firefox */
 }
